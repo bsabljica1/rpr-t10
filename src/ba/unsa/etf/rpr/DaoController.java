@@ -33,6 +33,8 @@ public class DaoController {
     public TextField brojStanovnikaGradPolje;
     public TextField nazivDzavaPolje;
 
+
+
     public void initialize () {
         geo = GeografijaDAO.getInstance();
     }
@@ -96,8 +98,8 @@ public class DaoController {
     public void francuski(ActionEvent actionEvent) {
         Locale.setDefault(new Locale("fr", "FR"));
         Stage myStage = (Stage) dodajDrzavuBtn.getScene().getWindow();
-        ResourceBundle bundle = ResourceBundle.getBundle("Translation_bs");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("gui.fxml"), bundle);
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation_fr");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dao.fxml"), bundle);
         loader.setController(new DaoController());
         Parent root = null;
         try {
@@ -113,7 +115,7 @@ public class DaoController {
         Locale.setDefault(new Locale("bs", "BA"));
         Stage myStage = (Stage) dodajDrzavuBtn.getScene().getWindow();
         ResourceBundle bundle = ResourceBundle.getBundle("Translation_bs");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("gui.fxml"), bundle);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dao.fxml"), bundle);
         loader.setController(new DaoController());
         Parent root = null;
         try {
@@ -128,8 +130,8 @@ public class DaoController {
     public void engleski(ActionEvent actionEvent) {
         Locale.setDefault(new Locale("en", "US"));
         Stage myStage = (Stage) dodajDrzavuBtn.getScene().getWindow();
-        ResourceBundle bundle = ResourceBundle.getBundle("Translation_bs");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("gui.fxml"), bundle);
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation_en_US");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dao.fxml"), bundle);
         loader.setController(new DaoController());
         Parent root = null;
         try {
@@ -144,8 +146,8 @@ public class DaoController {
     public void njemacki(ActionEvent actionEvent) {
         Locale.setDefault(new Locale("de", "DE"));
         Stage myStage = (Stage) dodajDrzavuBtn.getScene().getWindow();
-        ResourceBundle bundle = ResourceBundle.getBundle("Translation_bs");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("gui.fxml"), bundle);
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation_de");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dao.fxml"), bundle);
         loader.setController(new DaoController());
         Parent root = null;
         try {
@@ -156,4 +158,6 @@ public class DaoController {
         myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         myStage.show();
     }
+
+
 }

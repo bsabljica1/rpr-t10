@@ -97,6 +97,7 @@ public class GeografijaDAO {
         return conn;
     }
 
+
     public void obrisiDrzavu(String drzava) {
         try {
             upit = conn.prepareStatement("SELECT g.id FROM grad g, drzava d WHERE g.drzava = d.id AND d.naziv = ?");

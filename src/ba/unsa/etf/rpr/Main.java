@@ -16,10 +16,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Locale.setDefault(new Locale("bs", "BA"));
+        Locale.setDefault(new Locale("bs", "BS"));
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("dao.fxml"));
-        Parent root = loader.load();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dao.fxml"),bundle);
+        Parent root = null;
+        root = loader.load();
         primaryStage.setTitle("GeografijaDAO");
         primaryStage.setResizable(false);
         primaryStage.setScene(new Scene(root, 760, 190));
