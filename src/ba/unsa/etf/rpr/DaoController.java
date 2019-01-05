@@ -4,10 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.JRException;
 
@@ -17,6 +14,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
+import static javafx.scene.control.PopupControl.getClassCssMetaData;
 
 public class DaoController {
     public Button izmjeniDrzavuBtn;
@@ -76,8 +74,22 @@ public class DaoController {
     }
 
     public void obrisiGrad(ActionEvent actionEvent) {
-        String pom=nazivGradPolje.getText();
-        geo.obrisiGrad(pom);
+        if (!nazivGradPolje.getText().equals(null)) {
+            String pom = nazivGradPolje.getText();
+            geo.obrisiGrad(pom);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Brisanje grada");
+            alert.setHeaderText("Grad izbrisan");
+            alert.setContentText("Bravo");
+            alert.showAndWait();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Brisanje grada");
+            alert.setHeaderText(null);
+            alert.setContentText("Greska pri unosu.");
+            alert.showAndWait();
+        }
     }
 
     public void obrisiDrzavu(ActionEvent actionEvent) {
