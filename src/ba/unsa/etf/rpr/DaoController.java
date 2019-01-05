@@ -74,8 +74,12 @@ public class DaoController {
     }
 
     public void obrisiGrad(ActionEvent actionEvent) {
-        if (!nazivGradPolje.getText().equals(null)) {
-            String pom = nazivGradPolje.getText();
+        String pom = nazivGradPolje.getText();
+        boolean postoji=false;
+        for (int i=0; i<geo.gradovi().size(); i++) {
+            if (pom==geo.gradovi().get(i).getNaziv()) postoji=true;
+        }
+        if (postoji=true) {
             geo.obrisiGrad(pom);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Brisanje grada");
@@ -83,7 +87,7 @@ public class DaoController {
             alert.setContentText("Bravo");
             alert.showAndWait();
         }
-        else {
+        else if (postoji==false) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Brisanje grada");
             alert.setHeaderText(null);
