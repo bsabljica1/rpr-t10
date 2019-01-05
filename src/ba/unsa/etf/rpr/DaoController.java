@@ -95,66 +95,46 @@ public class DaoController {
         }
     }
 
-    public void francuski(ActionEvent actionEvent) {
+    public void francuski(ActionEvent actionEvent) throws Exception {
         Locale.setDefault(new Locale("fr", "FR"));
         Stage myStage = (Stage) dodajDrzavuBtn.getScene().getWindow();
         ResourceBundle bundle = ResourceBundle.getBundle("Translation_fr");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("dao.fxml"), bundle);
-        loader.setController(new DaoController());
         Parent root = null;
-        try {
             root = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         myStage.show();
     }
 
-    public void bosanski(ActionEvent actionEvent) {
+    public void bosanski(ActionEvent actionEvent) throws Exception {
         Locale.setDefault(new Locale("bs", "BA"));
         Stage myStage = (Stage) dodajDrzavuBtn.getScene().getWindow();
         ResourceBundle bundle = ResourceBundle.getBundle("Translation_bs");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("dao.fxml"), bundle);
-        loader.setController(new DaoController());
         Parent root = null;
-        try {
-            root = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        root=loader.load();
         myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         myStage.show();
     }
 
-    public void engleski(ActionEvent actionEvent) {
+    public void engleski(ActionEvent actionEvent) throws Exception {
         Locale.setDefault(new Locale("en", "US"));
         Stage myStage = (Stage) dodajDrzavuBtn.getScene().getWindow();
         ResourceBundle bundle = ResourceBundle.getBundle("Translation_en_US");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("dao.fxml"), bundle);
-        loader.setController(new DaoController());
         Parent root = null;
-        try {
-            root = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        root=loader.load();
         myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         myStage.show();
     }
 
-    public void njemacki(ActionEvent actionEvent) {
+    public void njemacki(ActionEvent actionEvent) throws Exception {
         Locale.setDefault(new Locale("de", "DE"));
         Stage myStage = (Stage) dodajDrzavuBtn.getScene().getWindow();
         ResourceBundle bundle = ResourceBundle.getBundle("Translation_de");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("dao.fxml"), bundle);
-        loader.setController(new DaoController());
         Parent root = null;
-        try {
-            root = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        root=loader.load();
         myStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         myStage.show();
     }

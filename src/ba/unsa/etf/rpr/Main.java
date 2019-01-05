@@ -17,7 +17,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Locale.setDefault(new Locale("bs", "BS"));
-        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation_bs");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("dao.fxml"),bundle);
         Parent root = null;
         root = loader.load();
